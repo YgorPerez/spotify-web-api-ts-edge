@@ -15,12 +15,6 @@ devDependencies:
   '@spotify/eslint-plugin':
     specifier: ^14.1.6
     version: 14.1.6(@typescript-eslint/parser@5.57.1)(eslint@8.37.0)
-  '@spotify/prettier-config':
-    specifier: ^14.1.6
-    version: 14.1.6(prettier@2.8.7)
-  '@spotify/tsconfig':
-    specifier: ^14.1.6
-    version: 14.1.6(typescript@5.0.3)
   '@spotify/web-scripts':
     specifier: ^14.1.6
     version: 14.1.6(@babel/core@7.21.4)(@spotify/eslint-plugin@14.1.6)(@types/node@18.15.11)(ts-node@10.9.1)
@@ -1610,15 +1604,6 @@ packages:
       prettier: 2.8.7
     dev: true
 
-  /@spotify/prettier-config@14.1.6(prettier@2.8.7):
-    resolution: {integrity: sha512-VDojGCGVV9CfCjM7642wWbpbFlMSVPCCCiYUnXNVewD+/l8t62Ypscko60ZJnWQuHu5KL0/hOD1UY8nUpEV70w==}
-    engines: {node: '>=14.17.0'}
-    peerDependencies:
-      prettier: 2.x
-    dependencies:
-      prettier: 2.8.7
-    dev: true
-
   /@spotify/tsconfig@13.0.1(typescript@4.9.5):
     resolution: {integrity: sha512-gwF13n4WEsfOneHbIzmJuOrmeuusSdFzT7mxEEFsxPEeoLuFDGW6Gahf1qUsdhFWlVbuIqVwN0GRczAdENUXuA==}
     engines: {node: '>=14.17.0'}
@@ -1626,15 +1611,6 @@ packages:
       typescript: '>=4 <5'
     dependencies:
       typescript: 4.9.5
-    dev: true
-
-  /@spotify/tsconfig@14.1.6(typescript@5.0.3):
-    resolution: {integrity: sha512-oDxjvURsVhJBtYZFmWEmD9gX3bHtYBqOXFEL/tLyIC8xqXXrCaBD8HGJeC1IBuewJfyMA5WGF1aHM2sig0oAbQ==}
-    engines: {node: '>=14.17.0'}
-    peerDependencies:
-      typescript: '>=4 <5'
-    dependencies:
-      typescript: 5.0.3
     dev: true
 
   /@spotify/web-scripts-utils@14.1.6:

@@ -1,6 +1,6 @@
 {
   "name": "spotify-web-api-ts-edge",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "An isomorphic TypeScript wrapper for Spotify's Web API that can run on the edge",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -32,8 +32,6 @@
   "devDependencies": {
     "@spotify/eslint-config-typescript": "^14.1.6",
     "@spotify/eslint-plugin": "^14.1.6",
-    "@spotify/prettier-config": "^14.1.6",
-    "@spotify/tsconfig": "^14.1.6",
     "@spotify/web-scripts": "^14.1.6",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.11",

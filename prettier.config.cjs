@@ -1,6 +1,6 @@
 /** @type {import("prettier").Config} */
 module.exports = {
-  // @ts-ignore
+  ...require('@spotify/web-scripts/config/prettier.config.js'),
   arrowParens: 'avoid',
   rangeStart: 0,
   rangeEnd: Infinity,
