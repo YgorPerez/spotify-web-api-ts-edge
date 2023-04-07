@@ -44,8 +44,6 @@ export async function spotifyFetch<T>(
     const fullUrl = `${BASE_API_URL}${url}?${new URLSearchParams(
       fetchConfig.params,
     ).toString()}`;
-    // eslint-disable-next-line no-console
-    console.log(fullUrl);
     const response = await fetch(fullUrl, {
       body: method === 'POST' ? JSON.stringify(fetchConfig.data) : undefined,
       ...fetchConfig.headers,

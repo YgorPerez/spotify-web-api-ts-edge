@@ -15,15 +15,24 @@
       <img alt="minzipped size" src="https://badgen.net/bundlephobia/minzip/spotify-web-api-ts-edge">
       <img alt="license" src="https://badgen.net/github/license/YgorPerez/spotify-web-api-ts-edge">
     </p>
-    <p align="center">
-      <img alt="Master Workflow" src="https://github.com/YgorPerez/spotify-web-api-ts-edge/workflows/Master%20Workflow/badge.svg"/>
-      <img alt="codecov" src="https://codecov.io/gh/YgorPerez/spotify-web-api-ts-edge/branch/master/graph/badge.svg"/>
-      <img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
-    </p>
   </p>
 </p>
 
+<br/>
+
 ### This is a fork from https://github.com/adamgrieger/spotify-web-api-ts
+
+<br/>
+
+## Changes made
+- removed the querystring package in favor of `urlSearchParams`
+- removed axios in favor of fetch making it possible to run on the edge
+- zero dependencies
+
+## Warning
+- I didn't test the fetches involing post, I wouldn't consider this package stable, use it with caution and lock the version when installing
+
+---
 
 ## Installation
 
