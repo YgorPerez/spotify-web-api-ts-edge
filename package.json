@@ -1,12 +1,12 @@
 {
-  "name": "spotify-web-api-ts",
-  "version": "1.0.0",
-  "description": "An isomorphic TypeScript wrapper for Spotify's Web API",
+  "name": "spotify-web-api-ts-edge",
+  "version": "0.9.0",
+  "description": "An isomorphic TypeScript wrapper for Spotify's Web API that can run on the edge",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "types",
-  "repository": "https://github.com/adamgrieger/spotify-web-api-ts-edge.git",
-  "author": "Adam Grieger",
+  "repository": "https://github.com/YgorPerez/spotify-web-api-ts-edge.git",
+  "author": "Ygor Perez",
   "license": "MIT",
   "files": [
     "cjs",
@@ -19,7 +19,6 @@
     "commit": "web-scripts commit",
     "format": "web-scripts format",
     "lint": "web-scripts lint",
-    "prepare": "web-scripts audit",
     "release": "web-scripts release",
     "test": "web-scripts test",
     "generate-docs": "typedoc --out docs src/index.ts"
@@ -34,6 +33,7 @@
     "@spotify/eslint-config-typescript": "^14.1.6",
     "@spotify/eslint-plugin": "^14.1.6",
     "@spotify/prettier-config": "^14.1.6",
+    "@spotify/tsconfig": "^14.1.6",
     "@spotify/web-scripts": "^14.1.6",
     "@types/jest": "^29.5.0",
     "@types/node": "^18.15.11",
@@ -50,6 +50,6 @@
   },
   "dependencies": {
     "axios": "github:sgammon/axios",
-    "qs": "^6.11.1"
+    "qs": "6.11.1"
   }
 }
