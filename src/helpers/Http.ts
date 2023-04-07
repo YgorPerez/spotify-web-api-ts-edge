@@ -1,4 +1,4 @@
-import { spotifyAxios, type SpotifyAxiosConfig } from './spotifyAxios';
+import { spotifyFetch, type SpotifyFetchConfig } from './spotifyFetch';
 
 export class Http {
   private accessToken: string;
@@ -15,19 +15,19 @@ export class Http {
     this.accessToken = accessToken;
   }
 
-  get<T>(url: string, config?: SpotifyAxiosConfig) {
-    return spotifyAxios<T>(url, 'GET', this.accessToken, config);
+  get<T>(url: string, config?: SpotifyFetchConfig) {
+    return spotifyFetch<T>(url, 'GET', this.accessToken, config);
   }
 
-  post<T>(url: string, config?: SpotifyAxiosConfig) {
-    return spotifyAxios<T>(url, 'POST', this.accessToken, config);
+  post<T>(url: string, config?: SpotifyFetchConfig) {
+    return spotifyFetch<T>(url, 'POST', this.accessToken, config);
   }
 
-  put<T>(url: string, config?: SpotifyAxiosConfig) {
-    return spotifyAxios<T>(url, 'PUT', this.accessToken, config);
+  put<T>(url: string, config?: SpotifyFetchConfig) {
+    return spotifyFetch<T>(url, 'PUT', this.accessToken, config);
   }
 
-  delete<T>(url: string, config?: SpotifyAxiosConfig) {
-    return spotifyAxios<T>(url, 'DELETE', this.accessToken, config);
+  delete<T>(url: string, config?: SpotifyFetchConfig) {
+    return spotifyFetch<T>(url, 'DELETE', this.accessToken, config);
   }
 }

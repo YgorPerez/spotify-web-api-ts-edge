@@ -1,5 +1,3 @@
-import axios from 'axios';
-import qs from 'qs';
 import { AlbumsApi } from './apis/AlbumsApi';
 import { ArtistsApi } from './apis/ArtistsApi';
 import { BrowseApi } from './apis/BrowseApi';
@@ -148,23 +146,26 @@ export class SpotifyWebApi {
   async getRefreshableUserTokens(
     code: string,
   ): Promise<GetRefreshableUserTokensResponse> {
-    const response = await axios.post<GetRefreshableUserTokensResponse>(
-      TOKEN_URL,
-      qs.stringify({
-        code,
-        grant_type: 'authorization_code',
-        redirect_uri: this.redirectUri,
+    const params = {
+      code,
+      grant_type: 'authorization_code',
+      redirect_uri: this.redirectUri,
+    };
+    const url = `${TOKEN_URL}?${new URLSearchParams(params).toString()}`;
+
+    const response = await fetch(url, {
+      headers: new Headers({
+        Authorization: `Basic ${encodeToBase64(
+          `${this.clientId}:${this.clientSecret}`,
+        )}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
       }),
-      {
-        headers: {
-          Authorization: `Basic ${encodeToBase64(
-            `${this.clientId}:${this.clientSecret}`,
-          )}`,
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      },
-    );
-    return response.data;
+      method: 'post',
+    });
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json() as Promise<GetRefreshableUserTokensResponse>;
   }
 
   /**
@@ -177,22 +178,24 @@ export class SpotifyWebApi {
   async getRefreshedAccessToken(
     refreshToken: string,
   ): Promise<GetRefreshedAccessTokenResponse> {
-    const response = await axios.post<GetRefreshedAccessTokenResponse>(
-      TOKEN_URL,
-      qs.stringify({
-        grant_type: 'refresh_token',
-        refresh_token: refreshToken,
+    const params = {
+      grant_type: 'refresh_token',
+      refresh_token: refreshToken,
+    };
+    const url = `${TOKEN_URL}?${new URLSearchParams(params).toString()}`;
+    const response = await fetch(url, {
+      headers: new Headers({
+        Authorization: `Basic ${encodeToBase64(
+          `${this.clientId}:${this.clientSecret}`,
+        )}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
       }),
-      {
-        headers: {
-          Authorization: `Basic ${encodeToBase64(
-            `${this.clientId}:${this.clientSecret}`,
-          )}`,
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      },
-    );
-    return response.data;
+      method: 'post',
+    });
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json() as Promise<GetRefreshedAccessTokenResponse>;
   }
 
   // +-------------------------+
@@ -208,20 +211,22 @@ export class SpotifyWebApi {
    * access token, is that a higher rate limit is applied.
    */
   async getTemporaryAppTokens(): Promise<GetTemporaryAppTokensResponse> {
-    const response = await axios.post<GetTemporaryAppTokensResponse>(
-      TOKEN_URL,
-      qs.stringify({
-        grant_type: 'client_credentials',
+    const params = {
+      grant_type: 'client_credentials',
+    };
+    const url = `${TOKEN_URL}?${new URLSearchParams(params).toString()}`;
+    const response = await fetch(url, {
+      headers: new Headers({
+        Authorization: `Basic ${encodeToBase64(
+          `${this.clientId}:${this.clientSecret}`,
+        )}`,
+        'Content-Type': 'application/x-www-form-urlencoded',
       }),
-      {
-        headers: {
-          Authorization: `Basic ${encodeToBase64(
-            `${this.clientId}:${this.clientSecret}`,
-          )}`,
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      },
-    );
-    return response.data;
+      method: 'post',
+    });
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return response.json() as Promise<GetTemporaryAppTokensResponse>;
   }
 }

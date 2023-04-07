@@ -18,7 +18,7 @@ describe('getAuthorizationUrl', () => {
         state: 'baz',
       }),
     ).toBe(
-      AUTHORIZE_URL.concat('?scope=streaming%20app-remote-control')
+      AUTHORIZE_URL.concat('?scope=streaming+app-remote-control')
         .concat('&show_dialog=true')
         .concat('&state=baz')
         .concat('&client_id=foo')

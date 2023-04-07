@@ -1,1 +1,3 @@
-module.exports = require('@spotify/web-scripts/config/jest.config.js');
+module.exports = {
+  ...require('@spotify/web-scripts/config/jest.config.js'),
+};
