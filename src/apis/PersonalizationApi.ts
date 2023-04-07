@@ -1,8 +1,8 @@
-import { Http } from '../helpers/Http';
-import { PersonalizationOptions } from '../types/SpotifyOptions';
+import { type Http } from '../helpers/Http';
+import { type PersonalizationOptions } from '../types/SpotifyOptions';
 import {
-  GetMyTopArtistsResponse,
-  GetMyTopTracksResponse,
+  type GetMyTopArtistsResponse,
+  type GetMyTopTracksResponse,
 } from '../types/SpotifyResponses';
 
 export class PersonalizationApi {

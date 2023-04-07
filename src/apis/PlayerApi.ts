@@ -1,19 +1,19 @@
-import { Http } from '../helpers/Http';
+import { type Http } from '../helpers/Http';
 import {
-  CurrentlyPlaying,
-  CurrentlyPlayingContext,
-  Device,
-  RepeatState,
+  type CurrentlyPlaying,
+  type CurrentlyPlayingContext,
+  type Device,
+  type RepeatState,
 } from '../types/SpotifyObjects';
 import {
-  DeviceIdOptions,
-  GetCurrentlyPlayingTrackOptions,
-  GetPlaybackInfoOptions,
-  GetRecentlyPlayedTracksOptions,
-  PlayOptions,
-  TransferPlaybackOptions,
+  type DeviceIdOptions,
+  type GetCurrentlyPlayingTrackOptions,
+  type GetPlaybackInfoOptions,
+  type GetRecentlyPlayedTracksOptions,
+  type PlayOptions,
+  type TransferPlaybackOptions,
 } from '../types/SpotifyOptions';
-import { GetRecentlyPlayedTracksResponse } from '../types/SpotifyResponses';
+import { type GetRecentlyPlayedTracksResponse } from '../types/SpotifyResponses';
 
 export class PlayerApi {
   private http: Http;

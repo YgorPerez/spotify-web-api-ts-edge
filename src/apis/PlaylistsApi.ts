@@ -1,24 +1,24 @@
-import { Http } from '../helpers/Http';
+import { type Http } from '../helpers/Http';
 import {
-  Playlist,
-  PlaylistDetails,
-  SpotifyImage,
+  type Playlist,
+  type PlaylistDetails,
+  type SpotifyImage,
 } from '../types/SpotifyObjects';
 import {
-  AddItemsToPlaylistOptions,
-  CreatePlaylistOptions,
-  GetMyPlaylistsOptions,
-  GetPlaylistItemsOptions,
-  GetPlaylistOptions,
-  GetUserPlaylistsOptions,
-  RemovePlaylistItemsByPositionOptions,
-  ReorderPlaylistItemsOptions,
+  type AddItemsToPlaylistOptions,
+  type CreatePlaylistOptions,
+  type GetMyPlaylistsOptions,
+  type GetPlaylistItemsOptions,
+  type GetPlaylistOptions,
+  type GetUserPlaylistsOptions,
+  type RemovePlaylistItemsByPositionOptions,
+  type ReorderPlaylistItemsOptions,
 } from '../types/SpotifyOptions';
 import {
-  GetMyPlaylistsResponse,
-  GetPlaylistItemsResponse,
-  GetUserPlaylistsResponse,
-  SnapshotIdResponse,
+  type GetMyPlaylistsResponse,
+  type GetPlaylistItemsResponse,
+  type GetUserPlaylistsResponse,
+  type SnapshotIdResponse,
 } from '../types/SpotifyResponses';
 
 export class PlaylistsApi {

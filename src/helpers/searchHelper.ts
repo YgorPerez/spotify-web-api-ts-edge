@@ -1,6 +1,6 @@
-import { SearchType } from '../types/SpotifyObjects';
-import { SearchOptions } from '../types/SpotifyOptions';
-import { Http } from './Http';
+import { type SearchType } from '../types/SpotifyObjects';
+import { type SearchOptions } from '../types/SpotifyOptions';
+import { type Http } from './Http';
 
 export function searchHelper<T>(
   http: Http,

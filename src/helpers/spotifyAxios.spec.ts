@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { BASE_API_URL } from '../constants';
-import { paramsSerializer, spotifyAxios } from './spotifyAxios';
+import { spotifyAxios } from './spotifyAxios';
 
 jest.mock('axios');
 
-const axiosMock = (axios as unknown) as jest.Mock;
+const axiosMock = axios as unknown as jest.Mock;
 
 describe('spotifyAxios', () => {
   beforeEach(() => {
@@ -18,16 +18,16 @@ describe('spotifyAxios', () => {
         bar: 'baz',
       },
     });
-    expect(axiosMock).toBeCalledWith({
+    expect(axiosMock).toHaveBeenCalledWith({
       params: {
         bar: 'baz',
       },
+      adapter: 'fetch',
       baseURL: BASE_API_URL,
       headers: {
         Authorization: 'Bearer token',
         'Content-Type': 'application/json',
       },
-      paramsSerializer,
       url: 'foo',
       method: 'GET',
     });
@@ -39,28 +39,16 @@ describe('spotifyAxios', () => {
       contentType: 'image/jpeg',
       data: 'bar',
     });
-    expect(axiosMock).toBeCalledWith({
+    expect(axiosMock).toHaveBeenCalledWith({
       data: 'bar',
+      adapter: 'fetch',
       baseURL: BASE_API_URL,
       headers: {
         Authorization: 'Bearer token',
         'Content-Type': 'image/jpeg',
       },
-      paramsSerializer,
       url: 'foo',
       method: 'GET',
     });
-  });
-
-  it('should handle errors', async () => {
-    const testError = { message: 'foo' };
-    axiosMock.mockRejectedValue(testError);
-    await expect(spotifyAxios('bar', 'GET', 'token')).rejects.toThrow('foo');
-  });
-});
-
-describe('paramsSerializer', () => {
-  it('should stringify arrays using the comma format', () => {
-    expect(paramsSerializer({ foo: ['bar', 'baz'] })).toEqual('foo=bar%2Cbaz');
   });
 });

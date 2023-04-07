@@ -1,11 +1,11 @@
-import { Http } from '../helpers/Http';
-import { Artist, Track } from '../types/SpotifyObjects';
-import { GetArtistAlbumsOptions } from '../types/SpotifyOptions';
+import { type Http } from '../helpers/Http';
+import { type Artist, type Track } from '../types/SpotifyObjects';
+import { type GetArtistAlbumsOptions } from '../types/SpotifyOptions';
 import {
-  GetArtistAlbumsResponse,
-  GetArtistsResponse,
-  GetArtistTopTracksResponse,
-  GetRelatedArtistsResponse,
+  type GetArtistAlbumsResponse,
+  type GetArtistsResponse,
+  type GetArtistTopTracksResponse,
+  type GetRelatedArtistsResponse,
 } from '../types/SpotifyResponses';
 
 export class ArtistsApi {

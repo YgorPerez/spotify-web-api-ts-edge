@@ -1,26 +1,26 @@
-import { Http } from '../helpers/Http';
+import { type Http } from '../helpers/Http';
 import {
-  Category,
-  GetRecommendationsSeeds,
-  Paging,
-  SimplifiedAlbum,
-  SimplifiedPlaylist,
+  type Category,
+  type GetRecommendationsSeeds,
+  type Paging,
+  type SimplifiedAlbum,
+  type SimplifiedPlaylist,
 } from '../types/SpotifyObjects';
 import {
-  GetCategoriesOptions,
-  GetCategoryOptions,
-  GetCategoryPlaylistsOptions,
-  GetFeaturedPlaylistsOptions,
-  GetNewReleasesOptions,
-  GetRecommendationsOptions,
+  type GetCategoriesOptions,
+  type GetCategoryOptions,
+  type GetCategoryPlaylistsOptions,
+  type GetFeaturedPlaylistsOptions,
+  type GetNewReleasesOptions,
+  type GetRecommendationsOptions,
 } from '../types/SpotifyOptions';
 import {
-  GetAvailableGenreSeedsResponse,
-  GetCategoriesResponse,
-  GetCategoryPlaylistsResponse,
-  GetFeaturedPlaylistsResponse,
-  GetNewReleasesResponse,
-  GetRecommendationsResponse,
+  type GetAvailableGenreSeedsResponse,
+  type GetCategoriesResponse,
+  type GetCategoryPlaylistsResponse,
+  type GetFeaturedPlaylistsResponse,
+  type GetNewReleasesResponse,
+  type GetRecommendationsResponse,
 } from '../types/SpotifyResponses';
 
 export class BrowseApi {

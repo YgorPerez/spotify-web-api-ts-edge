@@ -1,5 +1,5 @@
-import { Http } from '../helpers/Http';
-import { PrivateUser, PublicUser } from '../types/SpotifyObjects';
+import { type Http } from '../helpers/Http';
+import { type PrivateUser, type PublicUser } from '../types/SpotifyObjects';
 
 export class UsersApi {
   private http: Http;

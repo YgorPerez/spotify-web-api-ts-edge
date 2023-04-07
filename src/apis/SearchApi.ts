@@ -1,24 +1,24 @@
-import { Http } from '../helpers/Http';
+import { type Http } from '../helpers/Http';
 import { searchHelper } from '../helpers/searchHelper';
 import {
-  Artist,
-  Paging,
-  SearchType,
-  SimplifiedAlbum,
-  SimplifiedEpisode,
-  SimplifiedPlaylist,
-  SimplifiedShow,
-  Track,
+  type Artist,
+  type Paging,
+  type SearchType,
+  type SimplifiedAlbum,
+  type SimplifiedEpisode,
+  type SimplifiedPlaylist,
+  type SimplifiedShow,
+  type Track,
 } from '../types/SpotifyObjects';
-import { SearchOptions } from '../types/SpotifyOptions';
+import { type SearchOptions } from '../types/SpotifyOptions';
 import {
-  SearchAlbumsResponse,
-  SearchArtistsResponse,
-  SearchEpisodesResponse,
-  SearchPlaylistsResponse,
-  SearchResponse,
-  SearchShowsResponse,
-  SearchTracksResponse,
+  type SearchAlbumsResponse,
+  type SearchArtistsResponse,
+  type SearchEpisodesResponse,
+  type SearchPlaylistsResponse,
+  type SearchResponse,
+  type SearchShowsResponse,
+  type SearchTracksResponse,
 } from '../types/SpotifyResponses';
 
 export class SearchApi {

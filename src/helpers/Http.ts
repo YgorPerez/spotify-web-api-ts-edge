@@ -1,4 +1,4 @@
-import { spotifyAxios, SpotifyAxiosConfig } from './spotifyAxios';
+import { spotifyAxios, type SpotifyAxiosConfig } from './spotifyAxios';
 
 export class Http {
   private accessToken: string;

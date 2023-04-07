@@ -1,9 +1,12 @@
-import { Http } from '../helpers/Http';
-import { Show, SimplifiedShow } from '../types/SpotifyObjects';
-import { GetShowEpisodesOptions, MarketOptions } from '../types/SpotifyOptions';
+import { type Http } from '../helpers/Http';
+import { type Show, type SimplifiedShow } from '../types/SpotifyObjects';
 import {
-  GetShowEpisodesResponse,
-  GetShowsResponse,
+  type GetShowEpisodesOptions,
+  type MarketOptions,
+} from '../types/SpotifyOptions';
+import {
+  type GetShowEpisodesResponse,
+  type GetShowsResponse,
 } from '../types/SpotifyResponses';
 
 export class ShowsApi {

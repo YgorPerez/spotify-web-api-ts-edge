@@ -17,7 +17,7 @@ beforeEach(() => {
   jest.resetAllMocks();
 });
 
-describe(UsersApi.name, () => {
+describe('UsersApi.name', () => {
   describe('getMe', () => {
     beforeEach(() => {
       HttpMock.prototype.get.mockResolvedValue(privateUserFixture);
@@ -29,7 +29,7 @@ describe(UsersApi.name, () => {
       const response = await users.getMe();
 
       expect(response).toEqual(privateUserFixture);
-      expect(httpMock.get).toBeCalledWith('/me');
+      expect(httpMock.get).toHaveBeenCalledWith('/me');
     });
   });
 
@@ -44,7 +44,7 @@ describe(UsersApi.name, () => {
       const response = await users.getUser('foo');
 
       expect(response).toEqual(publicUserFixture);
-      expect(httpMock.get).toBeCalledWith('/users/foo');
+      expect(httpMock.get).toHaveBeenCalledWith('/users/foo');
     });
   });
 });

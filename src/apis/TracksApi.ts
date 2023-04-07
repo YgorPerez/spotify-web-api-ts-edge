@@ -1,9 +1,13 @@
-import { Http } from '../helpers/Http';
-import { AudioAnalysis, AudioFeatures, Track } from '../types/SpotifyObjects';
-import { MarketOptions } from '../types/SpotifyOptions';
+import { type Http } from '../helpers/Http';
 import {
-  GetAudioFeaturesForTracksResponse,
-  GetTracksResponse,
+  type AudioAnalysis,
+  type AudioFeatures,
+  type Track,
+} from '../types/SpotifyObjects';
+import { type MarketOptions } from '../types/SpotifyOptions';
+import {
+  type GetAudioFeaturesForTracksResponse,
+  type GetTracksResponse,
 } from '../types/SpotifyResponses';
 
 export class TracksApi {

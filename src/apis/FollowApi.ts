@@ -1,10 +1,10 @@
-import { Http } from '../helpers/Http';
-import { Artist, CursorBasedPaging } from '../types/SpotifyObjects';
+import { type Http } from '../helpers/Http';
+import { type Artist, type CursorBasedPaging } from '../types/SpotifyObjects';
 import {
-  FollowPlaylistOptions,
-  GetFollowedArtistsOptions,
+  type FollowPlaylistOptions,
+  type GetFollowedArtistsOptions,
 } from '../types/SpotifyOptions';
-import { GetFollowedArtistsResponse } from '../types/SpotifyResponses';
+import { type GetFollowedArtistsResponse } from '../types/SpotifyResponses';
 
 export class FollowApi {
   private http: Http;
@@ -212,7 +212,7 @@ export class FollowApi {
    *
    * @param artistId The Spotify ID for the artist.
    */
-  async isFollowingArtist(artistId: string): Promise<boolean> {
+  async isFollowingArtist(artistId: string): Promise<boolean | undefined> {
     const response = await this.isFollowingArtists([artistId]);
     return response[0];
   }
@@ -269,7 +269,7 @@ export class FollowApi {
   async isFollowingPlaylist(
     playlistId: string,
     userId: string,
-  ): Promise<boolean> {
+  ): Promise<boolean | undefined> {
     const response = await this.areFollowingPlaylist(playlistId, [userId]);
     return response[0];
   }
@@ -290,7 +290,7 @@ export class FollowApi {
    *
    * @param userId The Spotify ID for the user.
    */
-  async isFollowingUser(userId: string): Promise<boolean> {
+  async isFollowingUser(userId: string): Promise<boolean | undefined> {
     const response = await this.isFollowingUsers([userId]);
     return response[0];
   }

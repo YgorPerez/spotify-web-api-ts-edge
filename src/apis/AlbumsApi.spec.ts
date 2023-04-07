@@ -33,7 +33,7 @@ describe('AlbumsApi', () => {
       const response = await albums.getAlbum('foo');
 
       expect(response).toEqual(albumFixture);
-      expect(httpMock.get).toBeCalledWith('/albums/foo', undefined);
+      expect(httpMock.get).toHaveBeenCalledWith('/albums/foo', undefined);
     });
 
     it('should get an album (with options)', async () => {
@@ -42,7 +42,7 @@ describe('AlbumsApi', () => {
       const response = await albums.getAlbum('foo', { market: 'bar' });
 
       expect(response).toEqual(albumFixture);
-      expect(httpMock.get).toBeCalledWith('/albums/foo', {
+      expect(httpMock.get).toHaveBeenCalledWith('/albums/foo', {
         params: {
           market: 'bar',
         },
@@ -61,7 +61,7 @@ describe('AlbumsApi', () => {
       const response = await albums.getAlbums(['foo', 'bar']);
 
       expect(response).toEqual(getAlbumsFixture.albums);
-      expect(httpMock.get).toBeCalledWith('/albums', {
+      expect(httpMock.get).toHaveBeenCalledWith('/albums', {
         params: {
           ids: ['foo', 'bar'],
         },
@@ -76,7 +76,7 @@ describe('AlbumsApi', () => {
       });
 
       expect(response).toEqual(getAlbumsFixture.albums);
-      expect(httpMock.get).toBeCalledWith('/albums', {
+      expect(httpMock.get).toHaveBeenCalledWith('/albums', {
         params: {
           ids: ['foo', 'bar'],
           market: 'baz',
@@ -96,7 +96,10 @@ describe('AlbumsApi', () => {
       const response = await albums.getAlbumTracks('foo');
 
       expect(response).toEqual(getAlbumTracksFixture);
-      expect(httpMock.get).toBeCalledWith('/albums/foo/tracks', undefined);
+      expect(httpMock.get).toHaveBeenCalledWith(
+        '/albums/foo/tracks',
+        undefined,
+      );
     });
 
     it("should get an album's tracks (with options)", async () => {
@@ -105,7 +108,7 @@ describe('AlbumsApi', () => {
       const response = await albums.getAlbumTracks('foo', { market: 'bar' });
 
       expect(response).toEqual(getAlbumTracksFixture);
-      expect(httpMock.get).toBeCalledWith('/albums/foo/tracks', {
+      expect(httpMock.get).toHaveBeenCalledWith('/albums/foo/tracks', {
         params: {
           market: 'bar',
         },

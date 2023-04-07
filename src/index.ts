@@ -17,13 +17,13 @@ import { TOKEN_URL } from './constants';
 import { encodeToBase64 } from './helpers/encodeToBase64';
 import {
   getAuthorizationUrl,
-  GetAuthorizationUrlOptions,
+  type GetAuthorizationUrlOptions,
 } from './helpers/getAuthorizationUrl';
 import { Http } from './helpers/Http';
 import {
-  GetRefreshableUserTokensResponse,
-  GetRefreshedAccessTokenResponse,
-  GetTemporaryAppTokensResponse,
+  type GetRefreshableUserTokensResponse,
+  type GetRefreshedAccessTokenResponse,
+  type GetTemporaryAppTokensResponse,
 } from './types/SpotifyAuthorization';
 
 type SpotifyWebApiOptions = {

@@ -1,14 +1,14 @@
-import { Http } from '../helpers/Http';
+import { type Http } from '../helpers/Http';
 import {
-  GetSavedAlbumsOptions,
-  GetSavedShowsOptions,
-  GetSavedTracksOptions,
-  RemoveSavedShowsOptions,
+  type GetSavedAlbumsOptions,
+  type GetSavedShowsOptions,
+  type GetSavedTracksOptions,
+  type RemoveSavedShowsOptions,
 } from '../types/SpotifyOptions';
 import {
-  GetSavedAlbumsResponse,
-  GetSavedShowsResponse,
-  GetSavedTracksResponse,
+  type GetSavedAlbumsResponse,
+  type GetSavedShowsResponse,
+  type GetSavedTracksResponse,
 } from '../types/SpotifyResponses';
 
 export class LibraryApi {
@@ -118,7 +118,7 @@ export class LibraryApi {
    *
    * @param albumId The Spotify ID of the album.
    */
-  async isAlbumSaved(albumId: string): Promise<boolean> {
+  async isAlbumSaved(albumId: string): Promise<boolean | undefined> {
     const response = await this.areAlbumsSaved([albumId]);
     return response[0];
   }
@@ -130,7 +130,7 @@ export class LibraryApi {
    *
    * @param showId The Spotify ID of the show.
    */
-  async isShowSaved(showId: string): Promise<boolean> {
+  async isShowSaved(showId: string): Promise<boolean | undefined> {
     const response = await this.areShowsSaved([showId]);
     return response[0];
   }
@@ -142,7 +142,7 @@ export class LibraryApi {
    *
    * @param trackId The Spotify ID of the track.
    */
-  async isTrackSaved(trackId: string): Promise<boolean> {
+  async isTrackSaved(trackId: string): Promise<boolean | undefined> {
     const response = await this.areTracksSaved([trackId]);
     return response[0];
   }

@@ -1,7 +1,7 @@
-import { Http } from '../helpers/Http';
-import { Episode } from '../types/SpotifyObjects';
-import { MarketOptions } from '../types/SpotifyOptions';
-import { GetEpisodesResponse } from '../types/SpotifyResponses';
+import { type Http } from '../helpers/Http';
+import { type Episode } from '../types/SpotifyObjects';
+import { type MarketOptions } from '../types/SpotifyOptions';
+import { type GetEpisodesResponse } from '../types/SpotifyResponses';
 
 export class EpisodesApi {
   private http: Http;

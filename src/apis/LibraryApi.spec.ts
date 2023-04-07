@@ -33,7 +33,7 @@ describe('LibraryApi', () => {
       const response = await library.areAlbumsSaved(['foo', 'bar']);
 
       expect(response).toEqual([true, false]);
-      expect(httpMock.get).toBeCalledWith('/me/albums/contains', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/albums/contains', {
         params: {
           ids: ['foo', 'bar'],
         },
@@ -52,7 +52,7 @@ describe('LibraryApi', () => {
       const response = await library.areShowsSaved(['foo', 'bar']);
 
       expect(response).toEqual([true, false]);
-      expect(httpMock.get).toBeCalledWith('/me/shows/contains', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/shows/contains', {
         params: {
           ids: ['foo', 'bar'],
         },
@@ -71,7 +71,7 @@ describe('LibraryApi', () => {
       const response = await library.areTracksSaved(['foo', 'bar']);
 
       expect(response).toEqual([true, false]);
-      expect(httpMock.get).toBeCalledWith('/me/tracks/contains', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/tracks/contains', {
         params: {
           ids: ['foo', 'bar'],
         },
@@ -90,7 +90,7 @@ describe('LibraryApi', () => {
       const response = await library.getSavedAlbums();
 
       expect(response).toEqual(getSavedAlbumsFixture);
-      expect(httpMock.get).toBeCalledWith('/me/albums', undefined);
+      expect(httpMock.get).toHaveBeenCalledWith('/me/albums', undefined);
     });
 
     it("should get the current user's saved albums (with options)", async () => {
@@ -99,7 +99,7 @@ describe('LibraryApi', () => {
       const response = await library.getSavedAlbums({ limit: 2 });
 
       expect(response).toEqual(getSavedAlbumsFixture);
-      expect(httpMock.get).toBeCalledWith('/me/albums', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/albums', {
         params: {
           limit: 2,
         },
@@ -118,7 +118,7 @@ describe('LibraryApi', () => {
       const response = await library.getSavedShows();
 
       expect(response).toEqual(getSavedShowsFixture);
-      expect(httpMock.get).toBeCalledWith('/me/shows', undefined);
+      expect(httpMock.get).toHaveBeenCalledWith('/me/shows', undefined);
     });
 
     it("should get the current user's saved shows (with options)", async () => {
@@ -127,7 +127,7 @@ describe('LibraryApi', () => {
       const response = await library.getSavedShows({ limit: 2 });
 
       expect(response).toEqual(getSavedShowsFixture);
-      expect(httpMock.get).toBeCalledWith('/me/shows', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/shows', {
         params: {
           limit: 2,
         },
@@ -146,7 +146,7 @@ describe('LibraryApi', () => {
       const response = await library.getSavedTracks();
 
       expect(response).toEqual(getSavedTracksFixture);
-      expect(httpMock.get).toBeCalledWith('/me/tracks', undefined);
+      expect(httpMock.get).toHaveBeenCalledWith('/me/tracks', undefined);
     });
 
     it("should get the current user's saved tracks (with options)", async () => {
@@ -155,7 +155,7 @@ describe('LibraryApi', () => {
       const response = await library.getSavedTracks({ limit: 2 });
 
       expect(response).toEqual(getSavedTracksFixture);
-      expect(httpMock.get).toBeCalledWith('/me/tracks', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/tracks', {
         params: {
           limit: 2,
         },
@@ -174,7 +174,7 @@ describe('LibraryApi', () => {
       const response = await library.isAlbumSaved('foo');
 
       expect(response).toBe(true);
-      expect(httpMock.get).toBeCalledWith('/me/albums/contains', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/albums/contains', {
         params: {
           ids: ['foo'],
         },
@@ -193,7 +193,7 @@ describe('LibraryApi', () => {
       const response = await library.isShowSaved('foo');
 
       expect(response).toBe(true);
-      expect(httpMock.get).toBeCalledWith('/me/shows/contains', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/shows/contains', {
         params: {
           ids: ['foo'],
         },
@@ -212,7 +212,7 @@ describe('LibraryApi', () => {
       const response = await library.isTrackSaved('foo');
 
       expect(response).toBe(true);
-      expect(httpMock.get).toBeCalledWith('/me/tracks/contains', {
+      expect(httpMock.get).toHaveBeenCalledWith('/me/tracks/contains', {
         params: {
           ids: ['foo'],
         },
@@ -226,7 +226,7 @@ describe('LibraryApi', () => {
 
       await library.removeSavedAlbum('foo');
 
-      expect(httpMock.delete).toBeCalledWith('/me/albums', {
+      expect(httpMock.delete).toHaveBeenCalledWith('/me/albums', {
         data: {
           ids: ['foo'],
         },
@@ -240,7 +240,7 @@ describe('LibraryApi', () => {
 
       await library.removeSavedAlbums(['foo', 'bar']);
 
-      expect(httpMock.delete).toBeCalledWith('/me/albums', {
+      expect(httpMock.delete).toHaveBeenCalledWith('/me/albums', {
         data: {
           ids: ['foo', 'bar'],
         },
@@ -254,7 +254,7 @@ describe('LibraryApi', () => {
 
       await library.removeSavedShow('foo');
 
-      expect(httpMock.delete).toBeCalledWith('/me/shows', {
+      expect(httpMock.delete).toHaveBeenCalledWith('/me/shows', {
         params: {
           ids: ['foo'],
         },
@@ -266,7 +266,7 @@ describe('LibraryApi', () => {
 
       await library.removeSavedShow('foo', { market: 'bar' });
 
-      expect(httpMock.delete).toBeCalledWith('/me/shows', {
+      expect(httpMock.delete).toHaveBeenCalledWith('/me/shows', {
         params: {
           ids: ['foo'],
           market: 'bar',
@@ -281,7 +281,7 @@ describe('LibraryApi', () => {
 
       await library.removeSavedShows(['foo', 'bar']);
 
-      expect(httpMock.delete).toBeCalledWith('/me/shows', {
+      expect(httpMock.delete).toHaveBeenCalledWith('/me/shows', {
         params: {
           ids: ['foo', 'bar'],
         },
@@ -293,7 +293,7 @@ describe('LibraryApi', () => {
 
       await library.removeSavedShows(['foo', 'bar'], { market: 'baz' });
 
-      expect(httpMock.delete).toBeCalledWith('/me/shows', {
+      expect(httpMock.delete).toHaveBeenCalledWith('/me/shows', {
         params: {
           ids: ['foo', 'bar'],
           market: 'baz',
@@ -308,7 +308,7 @@ describe('LibraryApi', () => {
 
       await library.removeSavedTrack('foo');
 
-      expect(httpMock.delete).toBeCalledWith('/me/tracks', {
+      expect(httpMock.delete).toHaveBeenCalledWith('/me/tracks', {
         data: {
           ids: ['foo'],
         },
@@ -322,7 +322,7 @@ describe('LibraryApi', () => {
 
       await library.removeSavedTracks(['foo', 'bar']);
 
-      expect(httpMock.delete).toBeCalledWith('/me/tracks', {
+      expect(httpMock.delete).toHaveBeenCalledWith('/me/tracks', {
         data: {
           ids: ['foo', 'bar'],
         },
@@ -336,7 +336,7 @@ describe('LibraryApi', () => {
 
       await library.saveAlbum('foo');
 
-      expect(httpMock.put).toBeCalledWith('/me/albums', {
+      expect(httpMock.put).toHaveBeenCalledWith('/me/albums', {
         data: {
           ids: ['foo'],
         },
@@ -350,7 +350,7 @@ describe('LibraryApi', () => {
 
       await library.saveAlbums(['foo', 'bar']);
 
-      expect(httpMock.put).toBeCalledWith('/me/albums', {
+      expect(httpMock.put).toHaveBeenCalledWith('/me/albums', {
         data: {
           ids: ['foo', 'bar'],
         },
@@ -364,7 +364,7 @@ describe('LibraryApi', () => {
 
       await library.saveShow('foo');
 
-      expect(httpMock.put).toBeCalledWith('/me/shows', {
+      expect(httpMock.put).toHaveBeenCalledWith('/me/shows', {
         params: {
           ids: ['foo'],
         },
@@ -378,7 +378,7 @@ describe('LibraryApi', () => {
 
       await library.saveShows(['foo', 'bar']);
 
-      expect(httpMock.put).toBeCalledWith('/me/shows', {
+      expect(httpMock.put).toHaveBeenCalledWith('/me/shows', {
         params: {
           ids: ['foo', 'bar'],
         },
@@ -392,7 +392,7 @@ describe('LibraryApi', () => {
 
       await library.saveTrack('foo');
 
-      expect(httpMock.put).toBeCalledWith('/me/tracks', {
+      expect(httpMock.put).toHaveBeenCalledWith('/me/tracks', {
         data: {
           ids: ['foo'],
         },
@@ -406,7 +406,7 @@ describe('LibraryApi', () => {
 
       await library.saveTracks(['foo', 'bar']);
 
-      expect(httpMock.put).toBeCalledWith('/me/tracks', {
+      expect(httpMock.put).toHaveBeenCalledWith('/me/tracks', {
         data: {
           ids: ['foo', 'bar'],
         },

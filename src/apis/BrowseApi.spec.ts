@@ -37,7 +37,7 @@ describe('BrowseApi', () => {
       const response = await browse.getAvailableGenreSeeds();
 
       expect(response).toEqual(getAvailableGenreSeedsFixture.genres);
-      expect(httpMock.get).toBeCalledWith(
+      expect(httpMock.get).toHaveBeenCalledWith(
         '/recommendations/available-genre-seeds',
       );
     });
@@ -54,7 +54,10 @@ describe('BrowseApi', () => {
       const response = await browse.getCategories();
 
       expect(response).toEqual(getCategoriesFixture.categories);
-      expect(httpMock.get).toBeCalledWith('/browse/categories', undefined);
+      expect(httpMock.get).toHaveBeenCalledWith(
+        '/browse/categories',
+        undefined,
+      );
     });
 
     it('should get a list of categories (with options)', async () => {
@@ -63,7 +66,7 @@ describe('BrowseApi', () => {
       const response = await browse.getCategories({ country: 'foo' });
 
       expect(response).toEqual(getCategoriesFixture.categories);
-      expect(httpMock.get).toBeCalledWith('/browse/categories', {
+      expect(httpMock.get).toHaveBeenCalledWith('/browse/categories', {
         params: {
           country: 'foo',
         },
@@ -82,7 +85,10 @@ describe('BrowseApi', () => {
       const response = await browse.getCategory('foo');
 
       expect(response).toEqual(categoryFixture);
-      expect(httpMock.get).toBeCalledWith('/browse/categories/foo', undefined);
+      expect(httpMock.get).toHaveBeenCalledWith(
+        '/browse/categories/foo',
+        undefined,
+      );
     });
 
     it('should get a category (with options)', async () => {
@@ -91,7 +97,7 @@ describe('BrowseApi', () => {
       const response = await browse.getCategory('foo', { country: 'bar' });
 
       expect(response).toEqual(categoryFixture);
-      expect(httpMock.get).toBeCalledWith('/browse/categories/foo', {
+      expect(httpMock.get).toHaveBeenCalledWith('/browse/categories/foo', {
         params: {
           country: 'bar',
         },
@@ -110,7 +116,7 @@ describe('BrowseApi', () => {
       const response = await browse.getCategoryPlaylists('foo');
 
       expect(response).toEqual(getCategoryPlaylistsFixture.playlists);
-      expect(httpMock.get).toBeCalledWith(
+      expect(httpMock.get).toHaveBeenCalledWith(
         '/browse/categories/foo/playlists',
         undefined,
       );
@@ -124,11 +130,14 @@ describe('BrowseApi', () => {
       });
 
       expect(response).toEqual(getCategoryPlaylistsFixture.playlists);
-      expect(httpMock.get).toBeCalledWith('/browse/categories/foo/playlists', {
-        params: {
-          country: 'bar',
+      expect(httpMock.get).toHaveBeenCalledWith(
+        '/browse/categories/foo/playlists',
+        {
+          params: {
+            country: 'bar',
+          },
         },
-      });
+      );
     });
   });
 
@@ -143,7 +152,7 @@ describe('BrowseApi', () => {
       const response = await browse.getFeaturedPlaylists();
 
       expect(response).toEqual(getFeaturedPlaylistsFixture);
-      expect(httpMock.get).toBeCalledWith(
+      expect(httpMock.get).toHaveBeenCalledWith(
         '/browse/featured-playlists',
         undefined,
       );
@@ -155,7 +164,7 @@ describe('BrowseApi', () => {
       const response = await browse.getFeaturedPlaylists({ country: 'foo' });
 
       expect(response).toEqual(getFeaturedPlaylistsFixture);
-      expect(httpMock.get).toBeCalledWith('/browse/featured-playlists', {
+      expect(httpMock.get).toHaveBeenCalledWith('/browse/featured-playlists', {
         params: {
           country: 'foo',
         },
@@ -174,7 +183,10 @@ describe('BrowseApi', () => {
       const response = await browse.getNewReleases();
 
       expect(response).toEqual(getNewReleasesFixture.albums);
-      expect(httpMock.get).toBeCalledWith('/browse/new-releases', undefined);
+      expect(httpMock.get).toHaveBeenCalledWith(
+        '/browse/new-releases',
+        undefined,
+      );
     });
 
     it('should get a list of new releases (with options)', async () => {
@@ -183,7 +195,7 @@ describe('BrowseApi', () => {
       const response = await browse.getNewReleases({ country: 'foo' });
 
       expect(response).toEqual(getNewReleasesFixture.albums);
-      expect(httpMock.get).toBeCalledWith('/browse/new-releases', {
+      expect(httpMock.get).toHaveBeenCalledWith('/browse/new-releases', {
         params: {
           country: 'foo',
         },
@@ -204,7 +216,7 @@ describe('BrowseApi', () => {
       });
 
       expect(response).toEqual(getRecommendationsFixture);
-      expect(httpMock.get).toBeCalledWith('/recommendations', {
+      expect(httpMock.get).toHaveBeenCalledWith('/recommendations', {
         params: {
           seed_artists: ['foo', 'bar'],
         },
@@ -224,7 +236,7 @@ describe('BrowseApi', () => {
       );
 
       expect(response).toEqual(getRecommendationsFixture);
-      expect(httpMock.get).toBeCalledWith('/recommendations', {
+      expect(httpMock.get).toHaveBeenCalledWith('/recommendations', {
         params: {
           seed_artists: ['foo', 'bar'],
           market: 'baz',

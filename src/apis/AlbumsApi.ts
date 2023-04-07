@@ -1,9 +1,12 @@
-import { Http } from '../helpers/Http';
-import { Album } from '../types/SpotifyObjects';
-import { GetAlbumTracksOptions, MarketOptions } from '../types/SpotifyOptions';
+import { type Http } from '../helpers/Http';
+import { type Album } from '../types/SpotifyObjects';
 import {
-  GetAlbumsResponse,
-  GetAlbumTracksResponse,
+  type GetAlbumTracksOptions,
+  type MarketOptions,
+} from '../types/SpotifyOptions';
+import {
+  type GetAlbumsResponse,
+  type GetAlbumTracksResponse,
 } from '../types/SpotifyResponses';
 
 export class AlbumsApi {
