@@ -1,6 +1,6 @@
 {
   "name": "spotify-web-api-ts-edge",
-  "version": "0.9.3",
+  "version": "0.9.31",
   "description": "An isomorphic TypeScript wrapper for Spotify's Web API that can run on the edge",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -47,8 +47,5 @@
     "ts-jest": "^29.1.0",
     "typedoc": "^0.23.28",
     "typescript": "^5.0.3"
-  },
-  "dependencies": {
-    "axios": "^1.3.5"
   }
 }
