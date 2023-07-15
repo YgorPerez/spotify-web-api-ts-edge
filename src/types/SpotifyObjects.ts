@@ -494,6 +494,7 @@ export type SpotifyImage = {
   height: number | null;
   url: string;
   width: number | null;
+  base64?: string | undefined
 };
 
 export type TimeInterval = {
