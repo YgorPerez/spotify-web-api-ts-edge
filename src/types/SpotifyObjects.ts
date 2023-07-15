@@ -39,7 +39,7 @@ export type Artist = {
   genres: string[];
   href: string;
   id: string;
-  images: SpotifyImage[];
+  images: SpotifyImage[] & { base64?: string | undefined };
   name: string;
   popularity: number;
   type: 'artist';
@@ -395,7 +395,7 @@ export type SimplifiedAlbum = {
   external_urls: ExternalURL;
   href: string;
   id: string;
-  images: SpotifyImage[];
+  images: SpotifyImage[] & { base64?: string | undefined };
   name: string;
   release_date: string;
   release_date_precision: 'year' | 'month' | 'day';
@@ -494,7 +494,6 @@ export type SpotifyImage = {
   height: number | null;
   url: string;
   width: number | null;
-  base64?: string | undefined
 };
 
 export type TimeInterval = {
